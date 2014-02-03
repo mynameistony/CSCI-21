@@ -233,6 +233,8 @@ string toLower (string input)
 {
     for (int i = 0; i < input.length(); i++)
     input[i] = tolower(input[i]);
+
+    return input;
 }
 
 /*
@@ -244,6 +246,8 @@ string toUpper (string input)
 {
     for (int i = 0; i < input.length(); i++)
     input[i] = toupper(input[i]);
+    
+    return input;
 }
 
 /*
