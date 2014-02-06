@@ -1,3 +1,10 @@
+#
+# Grader comments 2014.02.05
+#
+# You need to update your makefile such that it
+# can actually be used for building your source
+# code.
+#
 # Makefile for programming challenges
 #
 # CSCI 21, Spring 2014
