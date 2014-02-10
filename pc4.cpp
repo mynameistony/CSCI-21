@@ -50,12 +50,16 @@ int main (int argc, char* argv[])
  */
 string makeString (string label, double value, char separator)
 {
-
+    // Create string stream instance
     stringstream instream;
+    
+    // Input all the stuff into the string
     instream << label << " " << separator << " " << value;
     
+    // Convert the stream to a string
     string endString = instream.str();
     
+    // Return the string
     return endString;
 }
 
@@ -69,6 +73,9 @@ string makeString (string label, double value, char separator)
  */
 char stringToChar (string value)
 {
+    // Check that the string is greater than 1 character long
+    // If it is then return a null character
+    // Else return the first character of the string
     if(value.length() > 1)
         return '\0';
     else
@@ -109,12 +116,16 @@ int stringToInt (string value)
  */
 double stringToDouble (string value)
 {
+    // Initialize the double to return
     double dvalue = 0;
     
+    // Initialize a string stream with the value
     stringstream stream(value);
     
+    // Out the stream to the double
     stream >> dvalue;
     
+    // Return the double
     return dvalue;
     
     
@@ -135,9 +146,12 @@ double stringToDouble (string value)
  */
 bool stringToBool (string value)
 {
+    // Loop thru the string and make it all lowercase
     for (int i = 0; i < value.length(); i++)
     value[i] = tolower(value[i]);
     
+    // It says "true", return true
+    // If not return false
 	if(value == "true")
 	    return true;
 	else
