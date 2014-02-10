@@ -14,9 +14,9 @@ void printMessage(string message);
 int getAnswer();
 int findLarger(int n1, int n2);
 int getStats(string s, int& alphaCount, int& digitCount);
-string buildMessage(string s, bool allCaps);
-string buildMessage(string s);
-string buildMessage();
+string buildMessage(string s = "", bool allCaps = false);
+// string buildMessage(string s);
+// string buildMessage();
 
 
 /* for unit testing -- do not alter */
@@ -33,64 +33,97 @@ int main (int argc, char* argv[])
 
 // CODE HERE -- FUNCTION DEFINITIONS
 void hello(){
+    
+    //Print "Hello World!"
     cout << "Hello world!";
 }
 
 void printMessage(string message){
+    
+    // Print "message"
     cout << message;
 }
 
 int getAnswer(){
+    
+    // Return the answer to life, the universe, and everything
     return 42;
 }
 
 int findLarger(int n1, int n2){
+    // If the first number is greater than or equal to the second, return it
     if (n1>=n2)
         return n1;
+    // If the second number is greater than or equal to the first, return it
     if (n2>=n1)
         return n2;
 }
 
 int getStats(string s, int& alphaCount, int& digitCount){
+    // Set the counts to zero
     alphaCount = 0;
     digitCount = 0;
     
+    // Variable to hold the current char as an int, to read the ascii value 
     int asciiChar = 0;
+    
+    // Loop thru the string
     for (int i = 0; i < s.length(); i++){
+        
+        // Set the current char to its ascii value
         asciiChar = s[i];
+        
+        // If its in the alphabetical range...
+        // ..Increase alphaCount
         if((asciiChar >= 65 && asciiChar <= 90) || (asciiChar >= 97 && asciiChar <= 122))
             alphaCount++;
+            
+        // If its in the number range...
+        // ...Increase digitCount
         if(asciiChar >= 48 && asciiChar <=57)
             digitCount++;
     }
+    
+    // Still have to return the length
     return s.length();
 }
 
 string buildMessage(string s, bool allCaps){
+    
+    // Initialize string to hold the message
     string message = "Message: ";
     
+    // Check if the string is empty...
+    // ... If it is return "Message empty"
     if (s == "")
         return "Message: empty";
+    // If it not empty
     else{
+        
+        // If message should be all caps...
         if(allCaps){
+            // ...Make it so...
             for (int i = 0; i < s.length(); i++)
                 s[i] = toupper(s[i]);
+            // ... and return    
             return message + s;
         }
+        
+        // Otherwise return the message
         else
             return message + s;
     }
     
 }
 
-string buildMessage(string s){
-    string message = "Message: ";
-    return message + s;
-}
+// string buildMessage(string s){
+//     string message = "Message: ";
+//     return message + s;
+// }
 
-string buildMessage(){
-    return "Message: empty";
-}
+// string buildMessage(){
+//     return "Message: empty";
+// }
 /*
  * Unit testing functions. Do not alter.
  */
