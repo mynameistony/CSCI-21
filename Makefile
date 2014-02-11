@@ -5,6 +5,11 @@
 # can actually be used for building your source
 # code.
 #
+# Grader comments 2014.02.10
+#
+# Still makefile issues. I'll ask Boyd to go
+# over makefiles again in class on Wednesday. --Rob
+#
 # Makefile for programming challenges
 #
 # CSCI 21, Spring 2014
