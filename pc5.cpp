@@ -9,14 +9,32 @@
 using namespace std;
 
 // CODE HERE -- FUNCTION DECLARATIONS/PROTOTYPES
+
+// No return or param, only prints "Hello world!" to std out
 void hello();
+
+// @param message: the message that will be printed to std out
+// No return
 void printMessage(string message);
+
+// @return: Returns the number 42
 int getAnswer();
+
+// @param n1: the 1st number to compare
+// @param n2: the 2nd number to compare
+// @return: the larger of n1 and n2
 int findLarger(int n1, int n2);
+
+// @param s: the string to test
+// @param &alphaCount: the number of alphabetical characters in "s"
+// @param &digitCount: the number of numerical characters in "s"
+// @return: the length of "s"
 int getStats(string s, int& alphaCount, int& digitCount);
+
+// @param s: the string to build from
+// @param allCaps: if true, make the whole string caps
+// @return: "s" concatenated to "Message: "
 string buildMessage(string s = "", bool allCaps = false);
-// string buildMessage(string s);
-// string buildMessage();
 
 
 /* for unit testing -- do not alter */

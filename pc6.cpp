@@ -80,56 +80,76 @@ int main (int argc, char* argv[])
 }
 
 void swapValues (int values[], int index1, int index2){
+    // Temporary variable
     int temp;
     
+    // Set temp to first value
     temp = values[index1];
     
+    // Set first value to the second
     values[index1] = values[index2];
     
+    // Set the second value to temp(the first value)
     values[index2] = temp;
     
 }
 
 int sum (int values[], int size){
+    // Set sum 2 0
     int sum = 0;
+    
+    // Loop thru tha array
     for (int i = 0; i < size; i++)
+        // Keep track of the sum
         sum += values[i];
+        
+    // Return the sum    
     return sum;
 }
 
 
 int valueAt (int values[], int size, int index, bool& error){
+    // Check for valid index
+    // If it isn't valid set the error flag and return 0
     if (index > size-1){
         error = true;
         return 0;
     }else 
     
+    // Otherwise  set error false, and return the value at index
     error = false;
     return values[index];
 }
 
 
 bool hasValue (int values[], int size, int value){
+    // Loop thru the array
     for(int i = 0; i < size; i++){
+        // If it finds the value, return true
         if(values[i] == value)
             return true;
     }
-    
+    // Otherwise return false
     return false;
 }
 
 string prepareForDisplay (int values[], int size, char separator = ','){
+// Initialize a string stream
 stringstream instream;
 
+// Loop thru the array
 for (int i = 0; i < size; i++){
+    // Receive the values into the stringstream
     instream << values[i];
-    // cerr << instream.str() << "\t" << i << endl;
+    
+    // Insert the seperator as long as its not the end of the string
     if(i < size-1)
         instream << separator;
 }
+// Convert the string stream to a string
 string theString = instream.str();
-// cerr << theString;
 
+// Return the string
 return theString;
     
 }
