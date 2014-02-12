@@ -4,7 +4,7 @@
  *
  * Tony Rogers
  * Date created: 1/27/14
- * Last date modified: 1/31/14
+ * Last date modified: 2/12/14
  *
  * SOURCES USED
  * My Brain
@@ -14,16 +14,44 @@
 #include <cstring>
 using namespace std;
 
+// Counts the number of Alpabetic and Numerical characters in a string
+//
+// @param theString: The string to use
+// @param alpha: the variable holding the number of alphabetical characters
+// @param num: the variable holding the number of numerical characters
 void countCharacters (string theString, int& alpha, int& count);
 
+// Capitalizes the first letter of a string and lowercases the rest
+// 
+// @param theString: theString to capitalize
+// @return: @theString capitalized
 string upAndDown (string theString);
 
+// Counts the words in a given string (seperated by spaces)
+//
+// @param theString: the string to use
+// @return: the number of words in theString
 int countWords (string theString);
 
+// Calculates the average number in an array
+//
+//@param values[]: the array to find the average of
+//@param arraySize: the size of the array (Imagine that!)
+//@return: the calculated average
 int computeAverage (int values [], int arraySize);
 
+// Returns the lowest value in an array
+//
+// @param values[]: the array to use
+// @param arraySize: the size of the array
+// @return: returns the smallest value in the array
 int findMinValue (int values [], int arraySize);
 
+// Returns the highest value in an array
+//
+// @param values[]: the array to use
+// @param arraySize: the size of the array
+// @return: returns the highest value in the array
 int findMaxValue (int values [], int arraySize);
 
 int main(){
@@ -51,11 +79,7 @@ int main(){
 
 
 
-// Returns the highest value in an array
-//
-// @param values[]: the array to use
-// @param arraySize: the size of the array
-// @return: returns the highest value in the array
+
 int findMaxValue(int values[], int arraySize){
 
 //Set the variable storing the max to zero
@@ -73,11 +97,7 @@ return max;
 }
 
 
-// Returns the lowest value in an array
-//
-// @param values[]: the array to use
-// @param arraySize: the size of the array
-// @return: returns the smallest value in the array
+
 int findMinValue(int values[], int arraySize){
 
 //Set the variable to a high value (if set to zero no value will be smaller than it)
@@ -94,11 +114,7 @@ int min = 1000000;
 return min;
 }
 
-// Calculates the average number in an array
-//
-//@param values[]: the array to find the average of
-//@param arraySize: the size of the array (Imagine that!)
-//@return: the calculated average
+
 int computeAverage(int values[], int arraySize){
 //Set variables to zero
 int average = 0;
@@ -118,10 +134,7 @@ return average;
 }
 
 
-// Counts the words in a given string (seperated by spaces)
-//
-// @param theString: the string to use
-// @return: the number of words in theString
+
 int countWords (string theString){
 
 //Assume at least one word is in the string
@@ -149,11 +162,7 @@ return count;
 }
 
 
-// Counts the number of Alpabetic and Numerical characters in a string
-//
-// @param theString: The string to use
-// @param alpha: the variable holding the number of alphabetical characters
-// @param num: the variable holding the number of numerical characters
+
 void countCharacters(string theString, int& alpha, int& num){
     //Store the length of the string
     int length = theString.length();
@@ -180,10 +189,7 @@ void countCharacters(string theString, int& alpha, int& num){
     }
 }
 
-// Capitalizes the first letter of a string and lowercases the rest
-// 
-// @param theString: theString to capitalize
-// @return: @theString capitalized
+
 string upAndDown(string theString){
 
 //Store th length of the string    
