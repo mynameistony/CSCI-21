@@ -1,3 +1,8 @@
+//
+// Grader comments 2014.02.13
+//
+// Doesn't compile using Makefile. Sorry.
+//
 /*
  * Programming Challenge 6
  */
