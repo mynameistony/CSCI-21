@@ -8,7 +8,7 @@
 # Date completed: 2-3-2014
 flags = -Wall -Wextra -pedantic -Werror
 
-all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc9 pc10 pc11 project1
+all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc10 pc11 pc12project1
 pc1: pc1.cpp
 	g++ -o challenge-1 pc1.cpp $(flags)
 pc2: pc2.cpp
@@ -25,11 +25,13 @@ pc7: pc7.cpp
 	g++ -o challenge-7 pc7.cpp $(flags)
 pc8: pc8.cpp
 	g++ -o challenge-8 pc8.cpp $(flags)
-pc9: pc9.cpp
-	g++ -o challenge-9 pc9.cpp $(flags)
+#pc9: pc9.cpp
+#	g++ -o challenge-9 pc9.cpp $(flags)
 pc10: pc10.cpp
 	g++ -o challenge-10 pc10.cpp $(flags)
 pc11: pc11.cpp
 	g++ -o challenge-11 pc11.cpp $(flags)
+pc12: pc12.cpp
+	g++ -o challenge-12 pc12.cpp $(flags)
 project1: project1.cpp
 	g++ -o project-1 project1.cpp $(flags)
