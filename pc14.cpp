@@ -10,6 +10,8 @@ using namespace std;
  * @param theArray the integer array to be sorted
  * @param size an unsigned integer containing the size of theArray
  */
+void outputArray(int theArray[], int size);
+ 
 void bubbleSort (int theArray[], unsigned int size);
 
 /*
@@ -34,7 +36,7 @@ void btassert(A assertion);
 void unittest ();
 bool compareArrays (int arrayOne[], int arrayTwo[], unsigned int size);
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -45,7 +47,7 @@ void bubbleSort(int theArray[], unsigned int size){
 int temp;
 
     while(size > 0){
-        for(int i = 1; i < size; i++){
+        for(unsigned int i = 1; i < size; i++){
             if(theArray[i-1] > theArray[i]){
                 temp = theArray[i];
                 theArray[i] = theArray[i-1];
@@ -59,9 +61,37 @@ int temp;
 
 }
 
-void selectionSort (int theArray[], unsigned int size){}
+void selectionSort (int theArray[], unsigned int size){
+    
+    // cout << "\nBefore: ";
+    // outputArray(theArray, size);
+    
+    for (unsigned int i = 0; i < size; i++){
+        for(unsigned int k = i + 1; k < size; k++){
+            if(theArray[k] < theArray[i]){
+                swapValues(theArray, i, k);
+            }
+        }
+        // outputArray(theArray, size);
+    }
+    // cout << "\nAfter: ";
+    // outputArray(theArray, size);
+        
+    
+}
 
-void swapValues (int values[], int index1, int index2){}
+void swapValues (int values[], int index1, int index2){
+    int temp = values[index1];
+    values[index1] = values[index2];
+    values[index2] = temp;
+}
+
+void outputArray(int theArray[], int size){
+    for(int i = 0; i < size; i++){
+        cout << theArray[i] << " ";
+    }
+    cout << "\n";
+}
 
 // CODE HERE -- FUNCTION DEFINITIONS
 
