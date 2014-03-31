@@ -67,6 +67,7 @@ class ShoppingList
          */
         string removeItem (unsigned int index);
 
+        // void outputArray();
     private:
 
         string items[10];
@@ -92,7 +93,7 @@ void unittest ();
 int main ()
 {
     unittest();
-
+    
     return 0;
 }
 
@@ -127,11 +128,28 @@ string& ShoppingList::getItem(unsigned int index){
 }
 
 string ShoppingList::removeItem(unsigned int index){
-    string item = items[index];
-    items[index] = "";
-    itemCount--;
-    return item;
+    if(index < itemCount){
+        string item = items[index];
+        items[index] = "";
+        itemCount--;
+        
+        for(unsigned int i = index; i < itemCount; i++){
+            items[i] = items[i+1];
+        }
+        
+        return item;
+    }else
+        return "Failed";
+        
+        
 }
+
+// void ShoppingList::outputArray(){
+//     for (unsigned int i = 0; i < maxItems; i++){
+//         cout << items[i] << " " ;
+//     }
+//         cout << endl;
+// }
 // CODE HERE -- FUNCTION DEFINITIONS
 
 /*
