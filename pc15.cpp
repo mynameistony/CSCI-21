@@ -112,8 +112,7 @@ unsigned int ShoppingList::getItemCount() const{
 
 bool ShoppingList::addItem(string theItem){
     if(itemCount < maxItems){
-        items[itemCount] = theItem;
-        itemCount++;
+        items[itemCount++] = theItem;
         return true;
     }else
         return false;
