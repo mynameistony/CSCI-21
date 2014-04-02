@@ -10,6 +10,7 @@ flags = -Wall -Wextra -pedantic -Werror
 
 all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc10 pc11 pc12 pc14 pc15 pc16 project1
 pc1: pc1.cpp
+	mkdir exec
 	g++ -o exec/pc1 pc1.cpp $(flags)
 pc2: pc2.cpp
 	g++ -o exec/pc2 pc2.cpp $(flags)
