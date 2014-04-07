@@ -2,7 +2,8 @@
  * Programming Challenge 17 - UNIT TEST
  */
 
-// #include "SLNode.h"
+
+#include "SLNode.h"
 
 #include <cassert>
 #include <cstdlib>
@@ -14,29 +15,30 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-class SLNode {
-    public:
-  
-    SLNode();
 
-    SLNode(int newContents);
-
-    ~SLNode();
-    
-    void setContents(int newContents);
-    
-    int getContents() const;
-    
-    void setNextNode(SLNode* setNode);
-    
-    SLNode* getNextNode() const;
-
-    private:
+// class SLNode {
+//     public:
   
-    SLNode* nextNode;
+//     SLNode();
+
+//     SLNode(int contents);
+
+//     ~SLNode();
+    
+//     void setContents(int contents);
+    
+//     int getContents() const;
+    
+//     void setNextNode(SLNode* nextNode);
+    
+//     SLNode* getNextNode() const;
+
+//   private:
   
-    int contents;
-};
+//   SLNode* nextNode;
+  
+//   int contents;
+// };
 
 int main ()
 {
@@ -45,44 +47,44 @@ int main ()
 	return 0;
 }
 
-SLNode::SLNode(){
-    
-    nextNode = NULL;
-    
-    contents = 0;
-}
 
-SLNode::SLNode(int newContents){
+// SLNode::SLNode(){
+    
+//     nextNode = NULL;
+    
+//     contents = 0;
+// }
+
+// SLNode::SLNode(int newContents){
  
-    nextNode = NULL;
+//     nextNode = NULL;
     
-    contents = newContents;
-}
+//     contents = newContents;
+// }
 
-SLNode::~SLNode(){
+// SLNode::~SLNode(){
     
-    nextNode = NULL;
-}
+//     nextNode = NULL;
+// }
 
-void SLNode::setContents(int newContents){
-    contents = newContents;
-}
+// void SLNode::setContents(int newContents){
+//     contents = newContents;
+// }
 
-int SLNode::getContents() const{
+// int SLNode::getContents() const{
     
-    return contents;
+//     return contents;
     
-}
+// }
 
-void SLNode::setNextNode(SLNode* setNode){
+// void SLNode::setNextNode(SLNode* setNode){
     
-    nextNode = setNode;
-}
+//     nextNode = setNode;
+// }
 
-SLNode* SLNode::getNextNode() const{
-    return nextNode;
-}
-
+// SLNode* SLNode::getNextNode() const{
+//     return nextNode;
+// }
 
 
 /*
