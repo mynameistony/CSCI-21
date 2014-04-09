@@ -20,7 +20,7 @@
 # Date completed: 2-3-2014
 flags = -Wall -Wextra -pedantic -Werror
 
-all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc10 pc11 pc12 pc14 pc15 pc16 project1
+all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc10 pc11 pc12 pc14 pc15 pc16 pc17 project1
 pc1: pc1.cpp
 	mkdir exec
 	g++ -o exec/pc1 pc1.cpp $(flags)
@@ -52,5 +52,15 @@ pc15: pc15.cpp
 	g++ -o exec/pc15 pc15.cpp $(flags)
 pc16: pc16.cpp
 	g++ -o exec/pc16 pc16.cpp $(flags)
+
+pc17: SLNode.o pc17.o
+	g++ $(flags) SLNode.o pc17.o -o exec/pc17 
+
 project1: project1.cpp
 	g++ -o project-1 project1.cpp $(flags)
+
+pc17.o: pc17.cpp
+	g++ -c pc17.cpp -o pc17.o
+	
+SLNode.o: SLNode.h SLNode.cpp
+	g++ -c SLNode.cpp -o SLNode.o
