@@ -59,6 +59,10 @@ pc17: SLNode.o pc17.o
 project1: project1.cpp
 	g++ -o project-1 project1.cpp $(flags)
 
+#
+# Grader comments 2014.04.09
+# Need compile flags here and the one below it
+#
 pc17.o: pc17.cpp
 	g++ -c pc17.cpp -o pc17.o
 	
