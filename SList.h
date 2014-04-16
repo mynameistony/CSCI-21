@@ -14,6 +14,10 @@ public:
     SList();
   
     ~SList();
+    
+    bool removeFirst(int target);
+    
+    void insert(int nodeContent);
   
     void insertHead(int nodeContent);
   

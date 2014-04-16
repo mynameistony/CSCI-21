@@ -13,6 +13,77 @@ SList::~SList(){
     clear();
 }
 
+bool SList::removeFirst(int target){
+    
+    if(head == NULL)
+        return false;
+    else{
+        SLNode* trail = NULL;
+        SLNode* spot = head;
+        
+        while((spot != NULL) && (spot->getContents() != target)){
+            trail = spot;
+            spot = spot->getNextNode();
+        }
+        
+        if(spot == NULL)
+            return false;
+        else if(spot == head){
+                removeHead();
+                return true;
+            }
+            
+        else{
+            //spots thinkin' Uh-Oh right about now
+            trail->setNextNode(spot->getNextNode());
+            delete spot;
+            size--;
+        }
+    }
+    
+}
+
+void SList::insert(int data){
+    
+    //Empty List
+    if(head == NULL)
+    {
+        insertHead(data);
+    }
+        //Only One Node
+        else if(head->getNextNode() == NULL)
+        {
+            
+            //Check if DATA is greater or less than only Node
+            if(data < head->getContents())
+                insertHead(data);
+            else
+               insertTail(data);
+        }
+        else 
+        {
+            SLNode* trail = NULL;
+            SLNode* spot = head;
+            
+            while((spot->getNextNode() != NULL) && (data > spot->getContents()))
+            {
+                trail = spot;
+                spot = spot->getNextNode();
+            }
+            if((spot->getNextNode() == NULL) && (data > spot->getContents()))
+                insertTail(data);
+            else 
+            {
+                SLNode* nodee = new SLNode(data);
+                nodee->setNextNode(spot);
+                trail->setNextNode(nodee);
+                size++;
+            }
+        }
+                
+        
+}
+
 void SList::insertHead(int nodeContents){
     SLNode* newNode = new SLNode(nodeContents);
     
@@ -97,22 +168,38 @@ string SList::toString() const{
     string theString = "";
     stringstream stream;
     int currNum;
-    if(head != NULL){
-    SLNode* i = head;
+
+
+    if(head == NULL){
+        return "";
+    } else 
         
+        if(head->getNextNode() == NULL){
+        stream << head->getContents();   
+        
+        theString = stream.str();
+        
+    } else{
+    SLNode* i = head;
+    int loop;
     while(i->getNextNode() != NULL){
-        i = i->getNextNode();
         
         currNum = i->getContents();
         
-        stream << currNum << ',';
+        stream << currNum; 
+        
+        if(loop < size)
+            stream << ',';
+            
+        i = i->getNextNode();
+        loop++;
+        
     }
     theString = stream.str();
-    
+    }
     // cout <<"\n" << "The String: " << theString << "\n";
     
     return theString;
-    }
-    else
-    return "";
+    
+    
 }
