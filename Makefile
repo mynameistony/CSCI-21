@@ -1,15 +1,3 @@
-#
-# Grader comments 2014.02.05
-#
-# You need to update your makefile such that it
-# can actually be used for building your source
-# code.
-#
-# Grader comments 2014.02.10
-#
-# Still makefile issues. I'll ask Boyd to go
-# over makefiles again in class on Wednesday. --Rob
-#
 # Makefile for programming challenges
 #
 # CSCI 21, Spring 2014
@@ -20,7 +8,7 @@
 # Date completed: 2-3-2014
 flags = -Wall -Wextra -pedantic -Werror
 
-all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc10 pc11 pc12 pc14 pc15 pc16 pc17 project1
+all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc10 pc11 pc12 pc14 pc15 pc16 pc17 pc19 project1
 pc1: pc1.cpp
 	mkdir exec
 	g++ -o exec/pc1 pc1.cpp $(flags)
@@ -59,12 +47,18 @@ pc17: SLNode.o pc17.o
 project1: project1.cpp
 	g++ -o project-1 project1.cpp $(flags)
 
-#
-# Grader comments 2014.04.09
-# Need compile flags here and the one below it
-#
 pc17.o: pc17.cpp
 	g++ -c pc17.cpp -o pc17.o
+
+pc19.o: pc19.cpp
+	g++ -c pc19.cpp -o pc19.o
+	
+pc19: pc19.o SList.o SLNode.o
+	g++ -o exec/pc19 pc19.o SList.o SLNode.o
 	
 SLNode.o: SLNode.h SLNode.cpp
 	g++ -c SLNode.cpp -o SLNode.o
+	
+SList.o: SList.h SList.cpp
+	g++ -c SList.cpp -o SList.o
+	
