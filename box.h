@@ -1,54 +1,48 @@
 #pragma once
-
-#include <string>
-
-#include <iostream>
-
-#include "prize.h"
-
+#include<cstdlib>
+#include<iostream>
 using namespace std;
+template<class T>
 
 class Box {
+
+
+public:
+
+    friend ostream& operator<< (ostream& out, Box& box){
+        out << box.contents;
+        
+        return out;
+    }
+ 
+    Box();
+  
+    Box(T newContents){
+        contents = newContents;
+    }
+  
+    T getContents(){
+        return contents;
+    }
+  
+    void setContents(T newContents){
+        contents = newContents;
+    }
     
-    friend class Prize;
-    public:
+    
 
-        ~Box();
-
-        Box(int boxNumber = 0, string boxColor = "NO COLOR", int prizeCapacity = 5, int prizeCount = 0);
-
-        int getBoxNumber();
-
-        Prize* createPrizeArray(unsigned int size);
-
-	    void clearPrizeArray();
-
-        void setBoxNumber(unsigned int boxNumber);
-
-        string getBoxColor();
-
-        void setBoxColor(string boxColor);
-
-        int getPrizeCapacity();
-
-        void setPrizeCapacity(unsigned int newCapacity);
-
-        int getPrizeCount();
-
-        bool addPrize(Prize prize);
-
-        Prize& getPrize(unsigned int index);
-
-        Prize removePrize(unsigned int index);
-
-        // friend bool operator== (Bo:getPrize(unsigned int index), testPrize);
-    private:
-
-        unsigned int _boxNumber, _prizeCapacity, _prizeCount;
-
-        string _boxColor;
-
-        Prize _scratch;
-
-        Prize* _prizes;
+  
+private:
+  
+    T contents;
 };
+
+
+
+// template<class T>
+// T Box<T>::getContents(){
+    
+//     T value = contents;
+    
+//     return value;    
+// }
