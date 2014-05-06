@@ -8,7 +8,7 @@
 # Date completed: 2-3-2014
 flags = -Wall -Wextra -pedantic -Werror
 
-all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc10 pc11 pc12 pc14 pc15 pc16 pc17 pc19 pc20 pc21 pc22 pc23 project1
+all: pc1 pc2 pc3 pc4 pc5 pc6 pc7 pc8 pc10 pc11 pc12 pc14 pc15 pc16 pc17 pc19 pc20 pc21 pc22 pc23 pc25 project1
 pc1: pc1.cpp
 	mkdir exec
 	g++ -o exec/pc1 pc1.cpp $(flags)
@@ -76,3 +76,6 @@ pc22: pc22.cpp
 	
 pc23: pc23.cpp
 	g++ -o exec/pc23 pc23.cpp
+	
+pc25: pc25.cpp
+	g++ -o exec/pc25 pc25.cpp $(flags)
