@@ -1,0 +1,32 @@
+C
+N
+O
+I hello
+I HELLO
+I Hello
+I WORLD
+I World
+I WOrLd
+I test
+I TEST
+I Test
+I ALPS
+I Alps
+I alps
+G hello
+G world
+N
+O
+F world
+F hello
+F test
+F alps
+F oops
+F help
+R world
+R hello
+R test
+N
+O
+X
+D
