@@ -68,6 +68,17 @@ int main ()
 	return 0;
 }
 
+//
+// Grader notes 2010.03.04
+//
+// 1. Better to go ahead and give a full name to variables, like "targetUnits"
+//
+// 2. Better to use 'M' and 'I' instead of 77 and 73:
+//
+// switch(intUnit) {
+//	case 'M':
+// }
+//
 float Converter::convertTemperature(float temp, char targUnits){
     int intUnit = targUnits;
 
